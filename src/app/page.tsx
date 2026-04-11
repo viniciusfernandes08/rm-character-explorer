@@ -16,7 +16,7 @@ export default async function Home({
   searchParams: Promise<SearchParams>
 }) {
   const params = await searchParams
-  const page = Number(params.page ?? 1)
+  const page = Math.max(1, Number(params.page ?? 1))
 
   return (  
     <main>

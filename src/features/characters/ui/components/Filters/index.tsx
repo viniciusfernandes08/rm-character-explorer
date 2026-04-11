@@ -9,7 +9,7 @@ type Props = {
   className?: string
 }
 
-const Filters: FC<Props> = ({ className }) => {
+const Filters: FC<Props> = ({ className = '' }) => {
   const {
     isOpen, 
     toggleOpen, 
@@ -25,7 +25,7 @@ const Filters: FC<Props> = ({ className }) => {
       <div className="flex w-[80%] mx-auto justify-end px-4">
         <button
           className="bg-transparent flex gap-2 items-center cursor-pointer px-2 rounded-full 
-            border border-blue-600 text-blue-600"
+            border border-gray-600 text-gray-600"
           onClick={toggleOpen}
         >
           <FaSliders />

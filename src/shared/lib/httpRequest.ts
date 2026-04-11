@@ -22,23 +22,26 @@ export const httpRequest = {
     try {
       const res = await fetch(`${baseUrl}/${normalizePath}${query}`, {
         method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
         next: { revalidate },
         signal: controller.signal
       })
 
       if (!res.ok) {
-        const error = await res.json()
-        throw new Error(error.message ?? 'Houve um erro ao processar a requisição')
+        let errorMessage = 'Houve um erro ao processar a requisição'
+      
+        try {
+          const error = await res.json()
+          errorMessage = error?.message ?? errorMessage
+        } catch {}
+      
+        throw new Error(errorMessage)
       }
 
       return res.json()
     } catch (error: unknown) {
       if (error instanceof Error) {
         if (error.name === 'AbortError') {
-          throw new Error('Tempo de reuisição excedido')
+          throw new Error('Tempo de requisição excedido')
         }
         
         throw new Error(error.message)

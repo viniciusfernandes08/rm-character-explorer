@@ -36,7 +36,7 @@ export const useApplyFilters = () => {
   }
 
   const cleanFilters = () => {
-    router.push('/')
+    router.replace('/')
     setIsOpen(false)
   }
 
