@@ -211,7 +211,7 @@ npm run test
 
 ## 📷 Preview
 
-![Preview do projeto](images/projeto.png)
+![Preview do projeto](public/images/projeto.png)
 
 ---
 
