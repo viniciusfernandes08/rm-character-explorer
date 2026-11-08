@@ -49,7 +49,7 @@ Organização do código por contexto de negócio, facilitando crescimento e man
 
 ---
 
-### ✅ Clean Architecture (parcial)
+### ✅ Clean Architecture
 
 Separação em camadas com responsabilidades bem definidas:
 
